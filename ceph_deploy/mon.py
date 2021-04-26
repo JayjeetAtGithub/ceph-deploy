@@ -591,6 +591,6 @@ def is_running(conn, args):
     )
     result_string = ' '.join(stdout)
     for run_check in [': running', b' start/running']:
-        if run_check in result_string:
+        if run_check.decode() in result_string.decode():
             return True
     return False
